@@ -1,12 +1,13 @@
 progressday = document.querySelector('#progressday')
 progressmon = document.querySelector('#progressmonth')
 year = document.querySelector('#year')
+dom = [ 31,28,31,30,31,30,31,31,30,31,30,31 ]
 
 function updateDay() {
     timenow = new Date()
     widthday = timenow.getHours() * 60*60 + timenow.getMinutes()*60 + timenow.getSeconds()
-    widthday /= 60*60*24;
-    widthday *= 100;
+    widthday /= 60*60*24
+    widthday *= 100
     progressday.style.width = widthday + '%'
 
 }
@@ -14,10 +15,9 @@ function updateDay() {
 function updateMon() {
     timenow = new Date()
     widthday = timenow.getDate()
-    dom = [ 31,28,31,30,31,30,31,31,30,31,30,31 ]
-    if(isleap(timenow.getYear())) dom[1] = 29;
-    widthday /= dom[timenow.getMonth()];
-    widthday *= 100;
+    if(isleap(timenow.getYear())) dom[1] = 29
+    widthday /= dom[timenow.getMonth()]
+    widthday *= 100
     progressmon.style.width = widthday + '%'
 }
 
@@ -32,6 +32,18 @@ function initYear() {
 }
 
 function updateYear() {
+    boxes = document.querySelectorAll('.subbox')
+    timenow = new Date()
+    if(isleap(timenow.getYear())) dom[1] = 29
+    dayspassed = 0
+    for(i = 0; i < timenow.getMonth(); i++) dayspassed += dom[i]
+    dayspassed += timenow.getDate()
+
+    for (i = 0; i < boxes.length; i++){
+        if ( i < dayspassed ){
+            boxes[i].classList.add('passed')
+        }
+    }
 
 }
 
@@ -42,5 +54,7 @@ function isleap(year) {
 updateDay()
 updateMon()
 initYear()
+updateYear()
 setInterval(updateDay, 1000)
 setInterval(updateMon, 1000)
+setInterval(updateYear, 1000)
