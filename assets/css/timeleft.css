@@ -1,0 +1,24 @@
+
+.bar{
+    width: 100%;
+    height: 40px;
+    border: solid black 1px;
+}
+.progress{
+    background-color: green;
+    height: 100%;
+    width: 0%;
+}
+.year{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.subbox {
+    flex: 0 1 50px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 2px;
+}
