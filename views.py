@@ -8,20 +8,25 @@ def index():
 	
 @views.route('/projects/asciicam/')
 def asciicam():
-  return render_template("asciicam.html", title="AsciiCam - Abhigyan Das")
+  return render_template("projects/asciicam.html", title="AsciiCam - Abhigyan Das")
 
 @views.route('/projects/timeleft/')
 def timeleft():
-  return render_template("timeleft.html", title="Timeleft - Abhigyan Das")
+  return render_template("projects/timeleft.html", title="Timeleft - Abhigyan Das", favicon="images/timeleft.png")
   
 @views.route('/projects/markets101/')
 def markets101():
-  return render_template("markets101.html", title="Markets101 - Abhigyan Das")
+  return render_template("projects/markets101.html", title="Markets101 - Abhigyan Das")
     
 @views.route('/projects/unjumbler/')
 def unjumbler():
-  return render_template("unjumbler.html", title="Unjumbler - Abhigyan Das")
+  return render_template("projects/unjumbler.html", title="Unjumbler - Abhigyan Das")
 
 @views.route('/contact/')
 def contact():
   return render_template("contact.html", title="Contact - Abhigyan Das")
+
+@views.route('/elements/')
+def elements():
+  return render_template("elements.html", title="Elements - Abhigyan Das")
+
