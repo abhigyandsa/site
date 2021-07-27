@@ -35,6 +35,8 @@ color: var(--accent);
 }
 .progress{
     border-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     background-color: var(--progresscolor);
     height: 100%;
     width: 0%;
