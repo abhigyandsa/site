@@ -1,8 +1,32 @@
+@font-face {
+    font-family: "oldEnglish";
+    src: url("../webfonts//old.otf");
+}
+
 :root{
-    --progresscolor: rgb(250, 182, 248);
-    --bordercolor: indigo;
+    --progresscolor: var(--accent);
+    --bordercolor: black;
     --border-radius: 0.375rem;
 }
+*, body{
+    font-family: serif;
+}
+.main h1{
+    font-family: "oldEnglish", sans-serif;
+}
+.clock{
+font-size: x-large;
+margin: 48px 0;
+}
+.clock .v {
+border: 1px solid black;
+padding: 16px 8px;
+border-radius: .25rem;
+}
+.clock .t {
+color: var(--accent);
+}
+
 .bar{
     width: 100%;
     height: 40px;

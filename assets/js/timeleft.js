@@ -3,12 +3,25 @@ progressmon = document.querySelector('#progressmonth')
 year = document.querySelector('#year')
 dom = [ 31,28,31,30,31,30,31,31,30,31,30,31 ]
 
+dayv = document.querySelector('#dayv')
+hourv = document.querySelector('#hourv')
+minv = document.querySelector('#minv')
+secv = document.querySelector('#secv')
+over = document.querySelector('#over')
+dayt = document.querySelector('#dayt')
+hourt = document.querySelector('#hourt')
+mint = document.querySelector('#mint')
+sect = document.querySelector('#sect')
+hr = document.querySelector('#hr')
+
+
 function updateDay() {
     timenow = new Date()
     widthday = timenow.getHours() * 60*60 + timenow.getMinutes()*60 + timenow.getSeconds()
     widthday /= 60*60*24
     widthday *= 100
     progressday.style.width = widthday + '%'
+    hr.innerHTML = 24 - timenow.getHours()
 
 }
 
@@ -44,7 +57,13 @@ function updateYear() {
             boxes[i].classList.add('passed')
         }
     }
+}
 
+function settime(){
+    timenow = new Date()
+    hourv.innerHTML = timenow.getHours().toString().padStart(2,'0')
+    minv.innerHTML = timenow.getMinutes().toString().padStart(2,'0')
+    secv.innerHTML = timenow.getSeconds().toString().padStart(2,'0')
 }
 
 function isleap(year) {
@@ -55,6 +74,8 @@ updateDay()
 updateMon()
 initYear()
 updateYear()
+settime()
 setInterval(updateDay, 1000)
 setInterval(updateMon, 1000)
 setInterval(updateYear, 1000)
+setInterval(settime,1000)
