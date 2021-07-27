@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		{% if title %}
+        <title> {{ title }} </title>
+        {% else %}
+        <title>Abhigyan Das</title>
+        {% endif %}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<link rel="shortcut icon" href="{{url_for('static',filename='images/dsa1.svg')}}" type="image/svg">
+        {% block style %}
+        {% endblock %}
+	</head>
+
+    <body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<!-- Header -->
+								<header id="header">
+									<a href="/" class="logo"><strong>Abhigyan Das</strong></a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/abhigyan-das-a77269179" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/abhigyandsa" class="icon brands fa-github"><span class="label">Github</span></a></li>
+										<li><a href="https://instagram.com/abhigyandsa" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://facebook.com/abhigyandsa" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://twitter.com/abhigyandsa" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									</ul>
+								</header>
+                            <!-- Sections -->
+                            <!-- ... -->
+                            {% block content %}
+                            {% endblock %}
+                            <!-- ... -->
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="/">Homepage</a></li>
+										<li>
+											<span class="opener">Projects</span>
+											<ul>
+												<li><a href="/#projects">All Projects</a></li>
+												<li><a href="/projects/asciicam">AsciiCam</a></li>
+												<li><a href="/projects/timeleft">TimeLeft</a></li>
+												<li><a href="/projects/markets101">Markets 101</a></li>
+												<li><a href="/projects/unjumbler">Unjumbler</a></li>
+											</ul>
+										</li>
+										<li><a href="/contact">Contact</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Achievements</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="https://www.linkedin.com/posts/abhigyan-das-a77269179_satindiatopperformer-activity-6626063443973726209-dr65"
+											class="image"><img src="{{url_for('static', filename='images/sat.jpg')}}" alt="sat top performer" /></a>
+											<p><strong>SAT</strong> <br>Score: <strong>1470</strong>
+                                            <br>Secured <strong>99th</strong> percentile. <br>
+                                            Awarded <strong>SAT India Top Performer</strong> by CollegeBoard.
+                                            </p>
+										</article>
+										<article>
+											<a href="https://site.sunderbanspod.repl.co/" class="image">
+												<img src="{{url_for('static', filename='images/pic09.jpg')}}" alt="sunderbans web administrator" /></a>
+											<p><strong>Web Administrator</strong> for Sundarbans House of <strong>IIT Madras BSc Degree</strong> <br>
+												Part of <strong>Upper House Council</strong> in Student Body</p>
+										</article>
+										<article>
+											<a href="https://sites.google.com/student.onlinedegree.iitm.ac.in/treehouse/announcements" 
+											class="image"><img src="{{url_for('static', filename='images/pic07.jpg')}}" alt="treehouse lead dev" /></a>
+											<p>
+												<strong>Lead Developer</strong> in <strong>Treehouse</strong> &mdash;
+												A student run announcement and information portal for IITM BSc Degree students.
+											</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="{{url_for('static', filename='images/pic10.jpg')}}" alt="moocs" /></a>
+											<p>Completed Several MOOC Courses <br> on <strong>edX</strong>, <strong>Coursera</strong>, <strong>Udacity</strong>, etc <br>
+												 about <strong>Computer Science</strong>, <strong>Economics</strong>, <strong>Management</strong>, and more</p>
+										</article>
+									</div>
+								</section>
+
+							<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Get in touch</h2>
+								</header>
+								<p>
+									Interested in working together? Get in touch:
+								</p>
+								<ul class="contact">
+									<li class="icon solid fa-envelope"><a href="mailto:abhigyandsa@gmail.com">abhigyandsa@gmail.com</a></li>
+									<li class="icon solid fa-home"><a href="https://goo.gl/maps/jYrBKPCXtRHan3Lk9">
+										HIG(U) 14, Swaranika Co-operative Housing Society, <br>
+									Sakuntala Park, Kolkata 700063</a> </li>
+								</ul>
+							</section>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+            {% block script %}
+            {% endblock %}
+
+	</body>
+
+</html>

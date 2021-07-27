@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+<!-- Content -->
+<section>
+	<header class="main">
+		<h1>Contact</h1>
+	</header>
+	<div class="row gtr-uniform">
+		<div class="col-12">
+			<input type="text" id="subject"autocomplete="off" placeholder="Subject" />
+		</div>
+		
+		<!-- Break -->
+		<div class="col-12">
+			<textarea id="body" name="body" placeholder="Enter your message" rows="6"></textarea>
+		</div>
+		<!-- Break -->
+		<div class="col-12">
+			<ul class="actions">
+				<li><div class="button primary" id="button" >Send Message</div></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section>
+	<header class="major">
+		<h2>Get in touch</h2>
+	</header>
+	<p>
+		Interested in working together? Get in touch:
+	</p>
+	<ul class="contact">
+		<li class="icon solid fa-envelope"><a href="mailto:abhigyandsa@gmail.com">abhigyandsa@gmail.com</a></li>
+		<li class="icon solid fa-home"><a href="https://goo.gl/maps/jYrBKPCXtRHan3Lk9">
+			HIG(U) 14, Swaranika Co-operative Housing Society, <br>
+		Sakuntala Park, Kolkata 700063</a> </li>
+	</ul>
+</section>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+	function SendMail(){
+		var link = 'mailto:abhigyandsa@gmail.com';
+		var subject,body,i=0;
+		Subject = document.getElementById("subject");
+		Body = document.getElementById("body");
+		subject = Subject.value;
+		body	= Body.value;
+		subject = encodeURIComponent(subject);
+		body = encodeURIComponent(body);
+		if( subject!='' ) {
+			link += (i++==0?'?':'&');
+			link += 'subject='+subject;
+		}
+		if( body!='' ) {
+			link += (i++==0?'?':'&');
+			link += 'body='+body;
+		}
+		link=link.replace(/%0A/g,"%0D%0A");
+		window.open(link);
+		Subject.value="";
+		Body.value="";
+	}
+	Button = document.getElementById("button");
+	Button.addEventListener("click", SendMail);
+</script>
+{% endblock script %}

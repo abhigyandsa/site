@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='assets/css/timeleft.css')}}">
+{% endblock style %}
+{% block content %}
+<!-- Content -->
+<section id='content'>
+	<header class="main">
+		<h1>TimeLeft</h1>
+	</header>
+
+	<div class="clock">
+		<span class="label timenow">The time is now </span>
+		<span class="v" id="hourv" ></span>
+		<span class="t" id="hourt" >H</span>
+		<span class="v" id="minv" ></span>
+		<span class="t" id="mint" >M</span>
+		<span class="v" id="secv" ></span>
+		<span class="t" id="sect" >S</span>. <br>
+	</div>									
+	
+	<div class="clock">
+		<span class="label timenow">This means you have  </span>
+		<span id="hr"></span>
+		<span>hours left in the day.</span>
+	</div>
+	<span class="label">Day</span>
+	<div class="bar day">
+		<div class="progress" id="progressday"></div>
+	</div><br>
+	
+	<span class="label">Month</span>
+	<div class="bar month">
+		<div class="progress" id="progressmonth"></div>
+	</div><br>
+
+	<span class="label">Year</span>
+	<div class="grid year" id="year">
+
+	</div>
+</section>
+{% endblock content %}
+
+{% block script %}
+<script src="{{url_for('static', filename='assets/js/timeleft.js' )}}"></script>
+{% endblock script %}
