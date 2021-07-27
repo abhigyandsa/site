@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<!-- Metadata tags -->
-		{% include 'meta.html' %}
+		{% include 'layout/meta.html' %}
         <!-- Styles  -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
         {% block style %}
@@ -16,14 +16,14 @@
 					<div id="main">
 						<div class="inner">
 							<!-- Header -->
-							{% include "header.html" %}
+							{% include "layout/header.html" %}
                             <!-- Sections -->
                             {% block content %}
                             {% endblock %}
 						</div>
 					</div>
 					<!-- Sidebar -->
-					{% include "sidebar.html" %}
+					{% include "layout/sidebar.html" %}
 			</div>
 
 		<!-- Scripts -->

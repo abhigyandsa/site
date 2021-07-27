@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout/layout.html" %}
 {% block style %}
 {% endblock style %}
 {% block content %}
@@ -99,7 +99,7 @@
 			</ul>
 		</article>
 		<article id='proj2'>
-			<a href="/projects/timeleft/" class="image"><img src="{{url_for('static', filename='images/timeleft.svg')}}" alt="" /></a>
+			<a href="/projects/timeleft/" class="image"><img src="{{url_for('static', filename='images/timeleft.png')}}" alt="" /></a>
 			<h3>TimeLeft</h3>
 			<p>
 				Show how much time is left in current day, hour, minute, and more.
