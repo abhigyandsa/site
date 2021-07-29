@@ -1,0 +1,67 @@
+<div class="displayport">
+    <header class="old center">
+        <h1>TimeLeft</h1>
+    </header>
+    <div class="clock center">
+        <span class="v" id="hourv" ></span>
+        <span class="t" id="hourt" >H</span>
+        <span class="v" id="minv" ></span>
+        <span class="t" id="mint" >M</span>
+        <span class="v" id="secv" ></span>
+        <span class="t" id="sect" >S</span> <br>
+    </div>
+</div>
+
+<style>
+    @font-face {
+        font-family: "oldEnglish";
+        src: url("{{url_for('static', filename='assets/webfonts/old.otf')}}");
+    }
+
+    :root{
+        --progresscolor: var(--accent);
+        --bordercolor: black;
+        --border-radius: 0.375rem;
+    }
+    .center{
+        text-align: center;
+    }
+    .displayport{
+        background-color: whitesmoke;
+        padding: 60px 0;
+        margin-bottom: 32px;
+        border-radius: var(--border-radius);
+    }
+    .old h1{
+        font-family: "oldEnglish", sans-serif;
+    }
+    .clock{
+    font-size: x-large;
+    margin: 48px 0;
+    font-family: serif;
+    }
+    .clock .v {
+    border: 1px solid black;
+    padding: 16px 8px;
+    border-radius: .25rem;
+    }
+    .clock .t {
+    color: var(--accent);
+    }
+</style>
+
+<script>
+    function settime(){
+        timenow = new Date()
+        secs = timenow.getHours() * 3600 + timenow.getMinutes() * 60 + timenow.getSeconds();
+        secs = 86400 - secs;
+        min = secs / 60; secs %= 60;
+        hr = min / 60; min %= 60;
+        hourv.innerHTML = Math.round(hr).toString().padStart(2,'0')
+        minv.innerHTML = Math.round(min).toString().padStart(2,'0')
+        secv.innerHTML = Math.round(secs).toString().padStart(2,'0')
+    }
+    settime()
+    setInterval(settime,1000)
+
+</script>

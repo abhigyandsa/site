@@ -13,6 +13,7 @@ hourt = document.querySelector('#hourt')
 mint = document.querySelector('#mint')
 sect = document.querySelector('#sect')
 hr = document.querySelector('#hr')
+min = document.querySelector('#min')
 
 
 function updateDay() {
@@ -22,6 +23,7 @@ function updateDay() {
     widthday *= 100
     progressday.style.width = widthday + '%'
     hr.innerHTML = 24 - timenow.getHours()
+    min.innerHTML = 60 - timenow.getMinutes()
 
 }
 
