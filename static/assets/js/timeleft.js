@@ -13,6 +13,7 @@ hourt = document.querySelector('#hourt')
 mint = document.querySelector('#mint')
 sect = document.querySelector('#sect')
 hr = document.querySelector('#hr')
+min = document.querySelector('#min')
 
 
 function updateDay() {
@@ -21,7 +22,16 @@ function updateDay() {
     widthday /= 60*60*24
     widthday *= 100
     progressday.style.width = widthday + '%'
-    hr.innerHTML = 24 - timenow.getHours()
+    progressday.innerHTML = Math.round(widthday) + '%'
+    
+    
+    secs = timenow.getHours() * 3600 + timenow.getMinutes() * 60 + timenow.getSeconds();
+    secs = 86400 - secs;
+    mins = secs / 60; secs %= 60;
+    hrs = mins / 60; mins %= 60;
+    hr.innerHTML = Math.round(hrs)
+    min.innerHTML = Math.round(mins)
+    
 
 }
 
@@ -32,6 +42,8 @@ function updateMon() {
     widthday /= dom[timenow.getMonth()]
     widthday *= 100
     progressmon.style.width = widthday + '%'
+    progressmon.innerHTML = Math.round(widthday) + '%'
+
 }
 
 function initYear() {

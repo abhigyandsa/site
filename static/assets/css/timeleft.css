@@ -23,7 +23,15 @@ border: 1px solid black;
 padding: 16px 8px;
 border-radius: .25rem;
 }
-.clock .t {
+@media screen and ( max-width: 500px ) {
+    .clock{
+        font-size: large;
+    }
+    .clock .v {
+        padding: 12px 6px;
+    }
+}
+.clock .t{
 color: var(--accent);
 }
 
@@ -40,6 +48,9 @@ color: var(--accent);
     background-color: var(--progresscolor);
     height: 100%;
     width: 0%;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
 }
 .year{
     margin: 20px;

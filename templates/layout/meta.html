@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no" />
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Description -->
+<meta name="description" content="{{ desc if desc else 'Abhigyan Das Portfolio Website' }}">
+<meta property="og:description" content="{{ desc if desc else 'Abhigyan Das Portfolio Website' }}">
+<meta name="twitter:description" content="{{ desc if desc else 'Abhigyan Das Portfolio Website' }}">
+
+<!-- Author -->
+<meta name="author" content="{{author if author else 'Abhigyan Das'}}">
+<meta name="twitter:site" content="{{authort if authort else '@abhigyandsa'}}">
+<meta name="twitter:creator" content="{{authort if authort else '@abhigyandsa'}}">
+
+<!-- Title -->
+<title>{{ title if title else "Abhigyan Das" }}</title>
+<meta property="og:title" content="{{ title if title else 'Abhigyan Das' }}">
+<meta name="twitter:title" content="{{ title if title else 'Abhigyan Das' }}">
+
+<!-- Favicon -->
+<link rel="shortcut icon" 
+href="{{url_for('static',filename=favicon if favicon else 'images/dsa1.svg')}}" type="image/svg">
+<meta property="og:image" content="{{url_for('static',filename=favicon if favicon else 'images/dsa1.svg')}}">
+<meta name="twitter:image" content="{{url_for('static',filename=favicon if favicon else 'images/dsa1.svg')}}">

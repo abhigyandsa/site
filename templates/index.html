@@ -1,0 +1,122 @@
+{% extends "layout/layout.html" %}
+{% block style %}
+{% endblock style %}
+{% block content %}
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1>Hi, I’m Abhigyan Das</h1>
+			<p>Leader &middot; Learner &middot; Freelancer</p>
+		</header>
+		<p>
+			Passionate and dedicated about problem solving.
+			I love building solutions to real world problems faced in day-to-day life.
+			<br>
+			I have online freelancing experience developing apps(Android),
+			and websites(mostly on Django and Flask),
+			<br>
+			I also have extensive experience making my own apps,
+			games and web apps, doing the market research, promoting them,
+			and optimising them for ad revenue. <br>
+			I have completed courses in Android Development, Blockchain, 
+			Artificial Intelligence, Data Science, and Economics.
+		</p>
+		<ul class="actions">
+			<li><a href="{{url_for('static', filename='assets/docs/resume.pdf')}}" class="button big"><i class="fa fa-download"></i> Download CV</a></li>
+		</ul>
+	</div>
+	
+</section>
+
+<!-- Section -->
+<section>
+	<header class="major">
+		<h2>Skills</h2>
+	</header>
+	<div class="features">
+		<article>
+			<span class="icon solid fa-fire"></span>
+			<div class="content">
+				<h3>Leadership</h3>
+				<p>
+					Worked with and lead many <strong>group</strong> projects with <strong>high throughput</strong> (50% increase). <br>
+					Good with <strong>handling high severity situations</strong> and <strong>brainstorming</strong> through ideas.
+				</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon solid fa-globe"></span>
+			<div class="content">
+				<h3>Web Development</h3>
+				<p>
+					Developed and deployed several <strong>full stack web applications</strong> and websites. <br>
+					Good with <strong>modern web technologies</strong> like: <br>
+					HTML5, CSS3, JavaScript (ES8), Django, Flask, Node.js, Express, React.js, SQL and no-SQL DBMS.
+				</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon solid fa-eye"></span>
+			<div class="content">
+				<h3>Design Thinking</h3>
+				<p>
+					Finding <strong>innovative</strong> and <strong>out-of-the-box solutions</strong>. <br> Have a <strong>eye for detail</strong>.
+				</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon solid fa-phone-alt"></span>
+			<div class="content">
+				<h3>Mobile Development</h3>
+				<p>
+					Profecient with <strong>Android App Development</strong>. <br>
+					Familiar with <strong>Native Android</strong> (Java and Kotlin) and <strong>React Native</strong>.
+				</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+<!-- Section -->
+<section id='projects'>
+	<header class="major">
+		<h2>Recent Projects</h2>
+	</header>
+	<div class="posts">
+		<article id='proj1'>
+			<a href="/projects/asciicam/" class="image"><img src="{{url_for('static', filename='images/ascii.png')}}" alt="asciicam" /></a>
+			<h3>AsciiCam</h3>
+			<p>
+				Convert any image to ascii-art format.
+			</p>
+			<ul class="actions">
+				<li><a href="/projects/asciicam/" class="button">More</a></li>
+			</ul>
+		</article>
+		<article id='proj2'>
+			{% include 'projects/timeleftdemo.html' %}
+			<h3>TimeLeft</h3>
+			<p>
+				Show how much time is left in current day, hour, minute, and more.
+			</p>
+			<ul class="actions">
+				<li><a href="/projects/timeleft/" class="button">More</a></li>
+			</ul>
+		</article>
+		<article id='proj3'>
+			<h3>Markets 101</h3>
+			<p>
+				<h4>Coming Soon...</h4>
+			</p>
+			<ul class="actions">
+				<li><a href="/projects/markets101/" class="button">More</a></li>
+			</ul>
+		</article>
+	</div>
+</section>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}

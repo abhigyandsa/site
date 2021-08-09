@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!-- Metadata tags -->
+		{% include 'layout/meta.html' %}
+        <!-- Styles  -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+        {% block style %}
+        {% endblock %}
+	</head>
+
+    <body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<!-- Header -->
+							{% include "layout/header.html" %}
+                            <!-- Sections -->
+                            {% block content %}
+                            {% endblock %}
+						</div>
+					</div>
+					<!-- Sidebar -->
+					{% include "layout/sidebar.html" %}
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+            {% block script %}
+            {% endblock %}
+
+	</body>
+</html>
