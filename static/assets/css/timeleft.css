@@ -48,6 +48,9 @@ color: var(--accent);
     background-color: var(--progresscolor);
     height: 100%;
     width: 0%;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
 }
 .year{
     margin: 20px;
